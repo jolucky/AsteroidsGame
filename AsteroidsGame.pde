@@ -1,10 +1,10 @@
-//your variable declarations here
+your variable declarations here
+Spaceship patStar= new Spaceship;
 public void setup() 
 {
-  //your code here
+  
 }
 public void draw() 
 {
-  //your code here
+  patStar.show();
 }
-
