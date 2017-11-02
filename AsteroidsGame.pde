@@ -39,10 +39,14 @@ public void keyTyped()
   }
   if(key=='a')
   {
-    patStar.turn(-20);
+    patStar.turn(-15);
   }
   if(key=='d')
   {
-    patStar.turn(20);
+    patStar.turn(15);
+  }
+  if(key=='s')
+  {
+    patStar.accelerate(-.25);
   }
 }
