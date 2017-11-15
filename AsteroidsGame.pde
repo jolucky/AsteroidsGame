@@ -1,13 +1,18 @@
 Stars[] lots;
+Asteroid[] many;
 Spaceship patStar= new Spaceship();
 public void setup() 
 {
   size(420,420);
-  //background(0,191,255);
-  lots = new Stars[50];
+  lots = new Stars[69];
   for(int i = 0; i < lots.length; i++)
   {
     lots[i] = new Stars();
+  }
+  many = new Asteroid[15];
+  for(int i = 0; i < many.length; i++)
+  {
+    many[i] = new Asteroid();
   }
 }
 public void draw() 
@@ -16,6 +21,11 @@ public void draw()
   for(int i = 0; i < lots.length; i++)
   {
     lots[i].show();
+  }
+  for(int i = 0; i < many.length; i++)
+  {
+    many[i].show();
+    many[i].move();
   }
   patStar.show();
   patStar.move();
@@ -35,7 +45,7 @@ public void keyTyped()
 {
   if(key== 'w')
   {
-    patStar.accelerate(0.25);
+    patStar.accelerate(0.5);
   }
   if(key=='a')
   {
@@ -47,6 +57,6 @@ public void keyTyped()
   }
   if(key=='s')
   {
-    patStar.accelerate(-.25);
+    patStar.accelerate(-.5);
   }
 }

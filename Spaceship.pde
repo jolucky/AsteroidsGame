@@ -1,5 +1,5 @@
 class Spaceship extends Floater  
-  {   
+  {
     public Spaceship() {
       corners=17;
       int[] xS= {-7,-12,-7,-4,-1,3,8,6,14,6,8,3,-1,-4,-7,-12,-7};

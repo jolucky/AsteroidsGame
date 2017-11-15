@@ -1,4 +1,3 @@
-
 class Stars 
 {
   int myX,myY;
@@ -11,14 +10,10 @@ class Stars
   {
     noStroke();
     fill(255,140,0);
-    ellipse(myX-3,myY+3,5,5);
-    ellipse(myX+3,myY+3,5,5);
-    ellipse(myX-3,myY-3,5,5);
-    ellipse(myX+3,myY-3,5,5);
-    ellipse(myX,myY-4,5,5);
-    ellipse(myX,myY+4,5,5);
-    ellipse(myX-4,myY,5,5);
-    ellipse(myX+4,myY,5,5);
+    ellipse(myX-3,myY+3,7.5,7.5);
+    ellipse(myX+3,myY+3,7.5,7.5);
+    ellipse(myX-3,myY-3,7.5,7.5);
+    ellipse(myX+3,myY-3,7.5,7.5);
     fill(255,215,0);
     ellipse(myX,myY,8,8);
   }
