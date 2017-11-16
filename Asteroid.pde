@@ -3,22 +3,23 @@ class Asteroid extends Floater
     private int rotateSpeed;
     public Asteroid() {
       corners=8;
-      int[] xS= {-8,-8,0,0,-8,-8,8,8};
-      int[] yS= {-8,-3,-3,3,3,8,8,-8};
+      int[] xS= {-6,-6,0,0,-6,-6,6,6};
+      int[] yS= {-6,-3,-3,3,3,6,6,-6};
       xCorners=xS;
       yCorners=yS;
       myColor=color(0,255,0);
       myCenterX=(int)(Math.random()*420);
       myCenterY=(int)(Math.random()*420);
-      myDirectionX =(int)(Math.random()*6-7);
+      myDirectionX =(int)(Math.random()*7-3);
       myDirectionY=(int)(Math.random()*7-3);
       myPointDirection=(int)(Math.random()*361);
-      rotateSpeed= (int)(Math.random()*31-15);
+      rotateSpeed= (int)(Math.random()*15);
       }
-    //public void move()
-    //{
-       //rotateSpeed=(int)(Math.random()*31-15);
-    //}
+    public void move()
+    {
+    	turn(rotateSpeed);
+    	super.move();
+    }
     public void setX(int x){myCenterX=x;}  
     public int getX(){return (int)myCenterX;}
     public void setY(int y){myCenterY=y;}  
