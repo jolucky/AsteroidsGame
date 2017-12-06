@@ -1,6 +1,7 @@
 Stars[] lots;
 Asteroid[] many;
 Spaceship patStar= new Spaceship();
+ArrayList <Asteroid> rock = new ArrayList<Asteroid>();
 public void setup() 
 {
   size(420,420);
@@ -9,10 +10,9 @@ public void setup()
   {
     lots[i] = new Stars();
   }
-  many = new Asteroid[15];
-  for(int i = 0; i < many.length; i++)
+  for(int i = 0; i < 15; i++)
   {
-    many[i] = new Asteroid();
+    rock.add(new Asteroid());
   }
 }
 public void draw() 
@@ -22,10 +22,14 @@ public void draw()
   {
     lots[i].show();
   }
-  for(int i = 0; i < many.length; i++)
+  for(int i = 0; i < rock.size(); i++)
   {
-    many[i].show();
-    many[i].move();
+    rock.get(i).show();
+    rock.get(i).move(); 
+    if (dist(patStar.getX(),patStar.getY(),rock.get(i).getX(),rock.get(i).getY())<=20)
+    {
+    	rock.remove(i);
+    }
   }
   patStar.show();
   patStar.move();
@@ -45,7 +49,7 @@ public void keyTyped()
 {
   if(key== 'w')
   {
-    patStar.accelerate(0.5);
+    patStar.accelerate(0.15);
   }
   if(key=='a')
   {
