@@ -10,7 +10,7 @@ public void setup()
   {
     lots[i] = new Stars();
   }
-  for(int i = 0; i < 15; i++)
+  for(int i = 0; i < 20; i++)
   {
     rock.add(new Asteroid());
   }
@@ -49,7 +49,7 @@ public void keyTyped()
 {
   if(key== 'w')
   {
-    patStar.accelerate(0.15);
+    patStar.accelerate(0.05);
   }
   if(key=='a')
   {
