@@ -61,6 +61,6 @@ public void keyTyped()
   }
   if(key=='s')
   {
-    patStar.accelerate(-.5);
+    patStar.accelerate(-.05);
   }
 }
