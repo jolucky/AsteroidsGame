@@ -1,18 +1,19 @@
 class Bullet extends Floater
 	{
+		private int mySize;
 		public Bullet(Spaceship theShip){
-			corners=5;
-			int[] xS= {8,6,14,6,8};
-      		int[] yS= {8,3,0,-3,-8};
-      		xCorners=xS;
-     		yCorners=yS;
-     		myColor=color((int)(Math.random()*255+1),(int)(Math.random()*255+1),(int)(Math.random()*255+1));
+			//corners=5;
+			//int[] xS= {8,6,14,6,8};
+      		//int[] yS= {8,3,0,-3,-8};
+      		//xCorners=xS;
+     		//yCorners=yS;
+     		myColor=color(255);
 			myCenterX=theShip.getX();
       		myCenterY=theShip.getY();
-      		myDirectionX =5 * Math.cos(dRadians)+theShip.getDirectionX();
-      		myDirectionY =5 * Math.sin(dRadians)+theShip.getDirectionY();
       		myPointDirection=theShip.getPointDirection();
       		double dRadians =myPointDirection*(Math.PI/180);
+      		myDirectionX =5 * Math.cos(dRadians)+theShip.getDirectionX();
+      		myDirectionY =5 * Math.sin(dRadians)+theShip.getDirectionY();
       		mySize=5;
 		}
 		public void show()
@@ -23,8 +24,8 @@ class Bullet extends Floater
 		}
 		public void move()
 		{
-			myCenterX==myDirectionX;
-			myCenterY==myDirectionY;
+			myCenterX+=myDirectionX;
+			myCenterY+=myDirectionY;
 		}
 
 		public void setX(int x){myCenterX=x;}  

@@ -1,6 +1,7 @@
 Stars[] lots;
 Asteroid[] many;
 Spaceship patStar= new Spaceship();
+ArrayList <Bullet> snow= new ArrayList<Bullet>();
 ArrayList <Asteroid> rock = new ArrayList<Asteroid>();
 public void setup() 
 {
@@ -10,7 +11,7 @@ public void setup()
   {
     lots[i] = new Stars();
   }
-  for(int i = 0; i < 20; i++)
+  for(int i = 0; i < 30; i++)
   {
     rock.add(new Asteroid());
   }
@@ -29,6 +30,21 @@ public void draw()
     if (dist(patStar.getX(),patStar.getY(),rock.get(i).getX(),rock.get(i).getY())<=20)
     {
     	rock.remove(i);
+    }
+  }
+  for(int i = 0; i < snow.size(); i++)
+  {
+    snow.get(i).show();
+    snow.get(i).move();
+    System.out.println(i + ", " + snow.get(i).getX() + ", " + snow.get(i).getY());
+    for(int j=0;j<rock.size();j++)
+    {
+      if (dist(snow.get(i).getX(),snow.get(i).getY(),rock.get(j).getX(),rock.get(j).getY())<10)
+      {
+        rock.remove(i);
+        snow.remove(i);
+        break;
+      }
     }
   }
   patStar.show();
@@ -63,4 +79,9 @@ public void keyTyped()
   {
     patStar.accelerate(-.05);
   }
+  if(key=='r')
+  {
+    snow.add(new Bullet(patStar));
+  }
+
 }
