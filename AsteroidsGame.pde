@@ -36,7 +36,6 @@ public void draw()
   {
     snow.get(i).show();
     snow.get(i).move();
-    System.out.println(i + ", " + snow.get(i).getX() + ", " + snow.get(i).getY());
     for(int j=0;j<rock.size();j++)
     {
       if (dist(snow.get(i).getX(),snow.get(i).getY(),rock.get(j).getX(),rock.get(j).getY())<10)
