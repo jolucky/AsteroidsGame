@@ -41,7 +41,7 @@ public void draw()
     {
       if (dist(snow.get(i).getX(),snow.get(i).getY(),rock.get(j).getX(),rock.get(j).getY())<10)
       {
-        rock.remove(i);
+        rock.remove(j);
         snow.remove(i);
         break;
       }
